@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+
 		<meta charset="utf-8">
 		<meta name="viewport" content="initial-scale=1">
 		<script src="js/jquery-2.0.2.js"></script>
@@ -48,11 +49,26 @@
 			<div>
 				<form action="chat.html">
 				WasGibt Username:<br>
-				<input type="text" name="username" value="YourUsername">
+				<input type="text" id="uName" name="username" value="YourUsername" >
 				<br><br>
 				<input type="submit" value="Join">
 				</form>
 			</div>
 		</div> 
+		<script>
+		document.querySelector('#uName').onkeypress = validate;
+    	function validate(e) {
+        	var regex = new RegExp("[a-zA-Z0-9]");
+	        var key = e.keyCode || e.which;
+    	    key = String.fromCharCode(key);
+
+	        if(!regex.test(key)) {
+	            $('input[type="submit"]').prop( "disabled", true );
+	        }
+	        else {
+	        	$('input[type="submit"]').prop( "disabled", false );
+	        }
+    }
+</script>
 	</body>
 </html>
