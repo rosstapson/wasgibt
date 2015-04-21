@@ -11,6 +11,7 @@
 					}
 				}
 			</script><script src='../forge/app_config.js'></script><script src='../forge/all.js'></script>
+
 		<meta charset="utf-8">
 		<meta name="viewport" content="initial-scale=1">
 		<script src="js/jquery-2.0.2.js"></script>
@@ -28,11 +29,11 @@
 			}
 
 			.jumbotron {
-				margin: 30px 0;
+				margin: 20px 0;
 				text-align: center;
 			}
 			.jumbotron h1 {
-				font-size: 40px;
+				font-size: 30px;
 				line-height: 1;
 			}
 
@@ -58,11 +59,26 @@
 			<div>
 				<form action="chat.html">
 				WasGibt Username:<br>
-				<input type="text" name="username" value="YourUsername">
-				<br><br>
-				<input type="submit" value="Join">
+				<input type="text" id="uName" name="username" value="YourUsername" ><input type="submit" value="Join">
+				<br>(A-Z, a-z and 0-9 only, no spaces.)<br>
+				
 				</form>
 			</div>
 		</div> 
+		<script>
+		document.querySelector('#uName').onkeypress = validate;
+    	function validate(e) {
+        	var regex = new RegExp("[a-zA-Z0-9]");
+	        var key = e.keyCode || e.which;
+    	    key = String.fromCharCode(key);
+
+	        if(!regex.test(key)) {
+	            $('input[type="submit"]').prop( "disabled", true );
+	        }
+	        else {
+	        	$('input[type="submit"]').prop( "disabled", false );
+	        }
+    }
+</script>
 	</body>
 </html>
