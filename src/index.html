@@ -42,23 +42,30 @@
 		</div>
 		<div class="container-narrow">
 			<div class="jumbotron">
-				<img src="pubnub.png">
+				<a href="https://www.pubnub.com/" class="thumbnail">
+    			<img src="pubnub.png">
+    			
+				</a>
 				<h1>WasGibt</h1>
 				<p class="lead">This is a simple chat app to demonstrate the ease of incorporating <a href="https://www.pubnub.com/">PubNub</a> into a Forge application.</p>
 			</div>
-			<div>
-				<form action="chat.html">
+			<div class="well well-sm">
+				<form class="form-inline" action="chat.html">
 				WasGibt Username:<br>
-				<input type="text" id="uName" name="username" value="YourUsername" ><input type="submit" value="Join">
+				<div class="form-group">
+					<input type="text" id="uName" name="username" value="" >
+					<input type="submit" class="btn btn-default" value="Join" disabled = true>
+				</div>
 				<br>(A-Z, a-z and 0-9 only, no spaces.)<br>
 				
 				</form>
 			</div>
 		</div> 
 		<script>
-		document.querySelector('#uName').onkeypress = validate;
+		document.querySelector('#uName').onkeydown = validate;
     	function validate(e) {
-        	var regex = new RegExp("[a-zA-Z0-9]");
+    		console.log("dude");
+        	var regex = new RegExp("[a-zA-Z0-9\b\n\r]");
 	        var key = e.keyCode || e.which;
     	    key = String.fromCharCode(key);
 
