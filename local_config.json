@@ -1,20 +1,14 @@
 {
-	"general": {
-	},
+	"general": {},
 	"ios": {
 		"profiles": {
-			"DEFAULT": {
-				"provisioning_profile": ""
-			}
-		}
+			"DEFAULT": {}
+		},
+		"devicetypeid": "com.apple.CoreSimulator.SimDeviceType.iPhone-6, 8.1"
 	},
 	"android": {
-		"sdk": "",
 		"profiles": {
-			"DEFAULT": {
-				"keystore": "",
-				"keyalias": ""
-			}
+			"DEFAULT": {}
 		}
 	}
 }
