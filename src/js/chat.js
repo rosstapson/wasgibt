@@ -1,11 +1,13 @@
 
     var userName = getUrlParameter("username");
 
+// Instantiate PubNub 
     var wasgibt_demo = PUBNUB.init({
         publish_key: 'pub-c-d73bf87c-eb1f-4eae-8e85-2c68a40f4554',
         subscribe_key: 'sub-c-596f903c-e742-11e4-8224-0619f8945a4f'
     });
 
+// Subscribe to the chat demo channel
     wasgibt_demo.subscribe({
       channel: 'demo_chat',
       callback: function(msg){
@@ -13,7 +15,6 @@
         if (msg.search(userName)) {
           liElement = '<li style="background:#eee">';
         }
-        console.log(msg);
         $('#messages').append($(liElement).text(msg));
       }
     });
@@ -23,6 +24,8 @@
         return false;
       }
       var msgString = userName + ": " + $('#m').val();
+
+//  In the form submit javascript, publish a message to the chat demo channel
       wasgibt_demo.publish({
         channel: 'demo_chat',
         message: msgString

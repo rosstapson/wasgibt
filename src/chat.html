@@ -28,12 +28,10 @@
 
       p {
         font-size: 1.2em;
-      }
-      
+      }      
     </style>
   </head>
   <body>
-
     <div class="navbar navbar-static-top navbar-inverse">
       <div class="navbar-inner">
         <div class="container-fluid">
@@ -41,18 +39,17 @@
         </div>
       </div>
     </div>
-    <div class="container">
-      <ul id="messages" style="list-style-type: none; margin: 0; padding: 0;  "></ul>
+    <div class="container-fluid">
+      <ul id="messages" class="list-unstyled"></ul>
     </div>
     <div class="container">
-      <form action=""  class="form-inline" style="position: fixed; bottom: 0; ">
-        <div class="input-group"> 
-          <input type="text" id="m" class="form-control" />
-          <span class="input-group-btn">
-            <input type="submit" class="btn btn-default" value="Send" >
-          </span>
-        </div>
-      </form>
+      
+        <form role="form" action="" style="position: fixed; bottom: 0; left: 0; right: 0; width=100%">
+          <div class="form-group">
+            <input type="text" class="form-control col-sm-12" id="m" autofocus>
+          </div>
+        </form>
+      
     </div>
     
     <script src="https://cdn.pubnub.com/pubnub-dev.js"></script>
