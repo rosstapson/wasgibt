@@ -29,6 +29,7 @@
       p {
         font-size: 1.2em;
       }
+      
     </style>
   </head>
   <body>
@@ -40,12 +41,17 @@
         </div>
       </div>
     </div>
-    <div class="container-fluid">
+    <div class="container">
       <ul id="messages" style="list-style-type: none; margin: 0; padding: 0;  "></ul>
     </div>
-    <div>
-      <form action="" class="form-inline" style="position: fixed; bottom: 0; ">
-        <input id="m" autocomplete="off" /><button class="btn btn-default">Send</button>
+    <div class="container">
+      <form action=""  class="form-inline" style="position: fixed; bottom: 0; ">
+        <div class="input-group"> 
+          <input type="text" id="m" class="form-control" />
+          <span class="input-group-btn">
+            <input type="submit" class="btn btn-default" value="Send" >
+          </span>
+        </div>
       </form>
     </div>
     
